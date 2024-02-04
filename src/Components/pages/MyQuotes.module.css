@@ -1,0 +1,19 @@
+.my-quotes {
+    color: white;
+}
+
+.my-quotes h1 {
+    text-align: center;
+}
+
+@media all and (max-width: 768px) {
+    .my-quotes h1 {
+        font-size: x-large;
+    }
+}
+
+@media all and (max-width: 480px) {
+    .my-quotes h1 {
+        font-size: larger;
+    }
+}

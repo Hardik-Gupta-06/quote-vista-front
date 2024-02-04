@@ -1,0 +1,54 @@
+.icons {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 15px 0px;
+}
+
+.icons button {
+    margin: 10px;
+}
+.app {
+    animation: rollIn 0.3s;
+    
+}
+
+.share>span {
+    position: absolute;
+    top: 15px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.share section {
+    text-align: center;
+    /* margin-top: 30px; */
+}
+
+.share section input {
+    background-color: #1a1625;
+    border: 1px solid #a688fa;
+    border-radius: 5px;
+    padding: 10px;
+    padding-right: 35px;
+    margin-left: 30px;
+}
+
+.share section span {
+    /* display: none; */
+    position: relative;
+    right: 30px;
+    cursor: pointer;
+    padding: 3px;
+    margin-right: 3px;
+    transition-duration: 0.3s;
+    transition-property: background-color;
+    border-radius: 5px;
+}
+
+.share section span:hover {
+    background-color: #46424f;
+}
+
+.share p {
+    text-align: center;
+}

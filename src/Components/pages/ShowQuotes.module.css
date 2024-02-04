@@ -1,0 +1,81 @@
+.full-quote section {
+    max-width: 700px;
+    padding: 15px;
+    background-color: #2f2b3a;
+    border-radius: 30px;
+    margin: 20px 10px;
+}
+
+.full-quote h3 {
+    font-size: 18px;
+    margin-top: 8px;
+    font-style: italic;
+    color: rgb(134, 134, 250);
+}
+
+.full-quote h3::before {
+    content: '~';
+}
+
+.full-quote p {
+    font-family: cursive;
+    font-size: 15px;
+}
+
+.full-quote button {
+    background-color: #a688fa;
+    color: black;
+    font-weight: 500;
+    padding: 5px;
+    border-radius: 15px;
+    border: 0;
+    margin: 5px;
+}
+
+@media all and (max-width: 768px) {
+    .full-quote h1 {
+        font-size: x-large;
+    }
+    .full-quote h3 {
+        font-size: 17px;
+        margin-top: 5px;
+    }
+    .full-quote p {
+        font-size: 14px;
+    }
+    .full-quote button {
+        font-size: smaller;
+    }
+}
+
+/* no need for 640px */
+
+@media all and (max-width: 575px) {
+    .full-quote h1 {
+        font-size: x-large;
+    }
+    .full-quote h3 {
+        font-size: 16px;
+    }
+    .full-quote p {
+        font-size: 13px;
+    }
+    .full-quote button {
+        font-size: 12px;
+    }
+}
+
+@media all and (max-width: 480px) {
+    .full-quote h1 {
+        font-size: larger;
+    }
+    .full-quote h3 {
+        font-size: 15px;
+    }
+    .full-quote p {
+        font-size: 12px;
+    }
+    .full-quote button {
+        font-size: 12px;
+    }
+}

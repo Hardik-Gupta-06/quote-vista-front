@@ -1,0 +1,161 @@
+.quote {
+    position: relative;
+    z-index: 1;
+    max-width: 700px;
+    padding: 15px;
+    /* display: flex;
+    justify-content: space-between;
+    align-items: center; */
+    list-style: none;
+    background-color: #2f2b3a;
+    border-radius: 30px;
+    margin: 20px 10px;
+}
+
+.quote h3 {
+    font-size: 18px;
+    margin-top: 8px;
+    color: rgb(134, 134, 250);
+    font-style: italic;
+}
+
+.quote h3::before {
+    content: '~';
+}
+
+.quote p {
+    /* border: 1px solid black; */
+    width: 80%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-family: cursive;
+    font-size: 15px;
+    /* height: 20px; */
+}
+
+.quote button {
+    /* background-color: rgb(202, 202, 226); */
+    background-color: #a688fa;
+    color: black;
+    font-weight: 500;
+    padding: 5px;
+    border-radius: 15px;
+    border: 0;
+    margin: 5px;
+}
+
+.quote button:hover {
+    cursor: pointer;
+}
+
+.edit {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 20px;
+    color: #a688fa;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 5px;
+    padding-top: 0px;
+    transition-duration: 0.3s;
+    transition-property: background-color;
+}
+
+.edit:hover {
+    background-color: #46424f;
+}
+
+.delete {
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    font-size: 20px;
+    color: red;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 5px;
+    padding-top: 0px;
+    transition-duration: 0.5s;
+    transition-property: background-color;
+}
+
+.delete:hover {
+    background-color: #46424f;
+}
+
+/* media query */
+@media all and (max-width: 768px) {
+    .quote h3 {
+        font-size: 17px;
+        margin-top: 5px;
+    }
+    .quote p {
+        font-size: 13px;
+    }
+    .quote button {
+        font-size: smaller;
+    }
+    .edit {
+        /* top: 5px;
+        right: 10px; */
+        font-size: 17px;
+    }
+    .delete {
+        /* bottom: 5px;
+        right: 10px; */
+        font-size: 17px;
+    }
+}
+
+/* no need at 640px */
+
+@media all and (max-width: 575px) {
+    .quote h3 {
+        font-size: 16px;
+        margin-top: 5px;
+    }
+    .quote p {
+        font-size: 12px;
+    }
+    .quote button {
+        font-size: 12px;
+    }
+    .edit {
+        /* top: 5px;
+        right: 10px; */
+        font-size: 15px;
+    }
+    .delete {
+        /* bottom: 5px;
+        right: 10px; */
+        font-size: 15px;
+    }
+}
+
+@media all and (max-width: 480px) {
+    .quote {
+        padding: 15px;
+    }
+    .quote h3 {
+        font-size: 15px;
+        margin-top: 5px;
+    }
+    .quote p {
+        font-size: 12px;
+    }
+    .quote button {
+        font-size: 12px;
+    }
+    .edit {
+        top: 5px;
+        right: 10px;
+        font-size: 15px;
+    }
+    .delete {
+        bottom: 5px;
+        right: 10px;
+        font-size: 15px;
+    }
+}

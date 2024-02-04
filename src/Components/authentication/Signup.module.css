@@ -1,0 +1,74 @@
+.signup {
+    padding: 16px;
+    border-radius: 10px;
+    margin: 60px 10px;
+    background-color: #2f2b3a;
+    color: white;
+}
+
+.signup button {
+    margin-top: 5px;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: #a688fa;
+    color: black;
+    font-weight: 500;
+    display: block;
+    margin: auto auto;
+}
+
+.signup input {
+    margin: 5px;
+    background-color: #2f2b3a;
+}
+
+div h1 , .signup p {
+    text-align: center;
+}
+
+.signup p a {
+    color: blue;
+    text-decoration: underline;
+}
+
+@media all and (max-width: 768px) {
+    .signup {
+        margin-top: 40px;
+        font-size: 14px;
+    }
+    div h1 {
+        font-size: x-large;
+    }
+    .signup input {
+        font-size: 14px;
+    }
+}
+
+/* no need for 640px */
+
+@media all and (max-width: 575px) {
+    .signup {
+        margin-top: 30px;
+        font-size: 13px;
+    }
+    div h1 {
+        font-size: x-large;
+    }
+    .signup input {
+        font-size: 13px;
+    }
+}
+
+@media all and (max-width: 480px) {
+    .signup {
+        margin-top: 20px;
+        font-size: 12px;
+    }
+    div h1 {
+        font-size: larger;
+    }
+    .signup input {
+        font-size: 12px;
+    }
+}
