@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { IoIosHeartEmpty } from "react-icons/io";
 import { IoIosHeart } from "react-icons/io";
 import { useNavigate } from 'react-router-dom';
+import { URL } from '../url';
 
 const LikeQuote = ({likes , id , getQuotes}) => {
 
@@ -21,7 +22,7 @@ const LikeQuote = ({likes , id , getQuotes}) => {
     } , []);
 
     async function likeHandler(id) {
-        let res = await axios.patch(`http://localhost:8080/like/${id}` , {userId} , {withCredentials: true});
+        let res = await axios.patch(`${URL}/like/${id}` , {userId} , {withCredentials: true});
         if (res.data.msg && res.data.msg == 'Please Login First') {
             navigate('/login');
             return;
@@ -31,7 +32,7 @@ const LikeQuote = ({likes , id , getQuotes}) => {
     }
 
     async function unlikeHandler(id) {
-        let res = await axios.patch(`http://localhost:8080/unlike/${id}` , {userId} , {withCredentials: true});
+        let res = await axios.patch(`${URL}/unlike/${id}` , {userId} , {withCredentials: true});
         if (res.data.msg && res.data.msg == 'Please Login First') {
             navigate('/login');
             return;

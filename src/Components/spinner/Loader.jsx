@@ -1,5 +1,5 @@
 import React from 'react'
-import { BallTriangle, Blocks, RotatingSquare } from 'react-loader-spinner';
+import { RotatingSquare } from 'react-loader-spinner';
 
 const Loader = () => {
   return (

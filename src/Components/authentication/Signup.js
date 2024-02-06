@@ -3,6 +3,7 @@ import React,{ useRef } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import styles from './Signup.module.css';
 import { Slide, toast } from 'react-toastify';
+import { URL } from '../url';
 
 const Signup = () => {
 
@@ -18,9 +19,8 @@ const Signup = () => {
         let email = mailRef.current.value;
         let password = passRef.current.value;
         try {
-            let res = await axios.post('http://localhost:8080/signup' , {username , email , password} , {withCredentials: true});
+            let res = await axios.post(`${URL}/signup` , {username , email , password} , {withCredentials: true});
             if (res.data.msg == 'This mail is already registered') {
-                // console.log(res.data.msg);
                 toast.error("This email id is already in use");
                 navigate('/signup');
             }

@@ -3,19 +3,16 @@ import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import styles from "./EditQuotes.module.css";
 import { Slide, toast } from "react-toastify";
+import { URL } from "../url";
 
 const EditQuotes = () => {
   let { id } = useParams();
   let navigate = useNavigate();
-  let [quote, setQuote] = useState({
-    author: "",
-    text: "",
-  });
   let [nameState, setNameState] = useState();
   let [quoteState, setQuoteState] = useState();
 
   async function quoteHandler() {
-    let res = await axios.get(`http://localhost:8080/quotes/${id}`, {
+    let res = await axios.get(`${URL}/quotes/${id}`, {
       withCredentials: true,
     });
     if (res.data.msg && res.data.msg == "Please Login First") {
@@ -23,7 +20,6 @@ const EditQuotes = () => {
       return;
     }
     let { author, text } = res.data;
-    setQuote({ author, text });
     setNameState(author);
     setQuoteState(text);
   }
@@ -33,14 +29,13 @@ const EditQuotes = () => {
     let author = nameState;
     let text = quoteState;
     let res = await axios.patch(
-      `http://localhost:8080/quotes/${id}/edit`,
+      `${URL}/quotes/${id}/edit`,
       {
         author,
         text,
       },
       { withCredentials: true }
     );
-    // console.log(res);
     if (res.data.msg && res.data.msg == "Please Login First") {
       navigate("/login");
       return;

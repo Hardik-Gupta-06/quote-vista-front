@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import styles from './Login.module.css';
 import {Slide , toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { URL } from '../url';
 
 const Login = ({userHandler}) => {
     let mailRef = useRef();
@@ -16,19 +17,16 @@ const Login = ({userHandler}) => {
         let email = mailRef.current.value;
         let password = passRef.current.value;
         try {
-            let res = await axios.post('http://localhost:8080/login' , {email , password} , {withCredentials: true});
+            let res = await axios.post(`${URL}/login` , {email , password} , {withCredentials: true});
             if (res.data.msg == 'Create your account first') {
-                // console.log(res.data.msg);
                 toast.error("Either your email or password is incorrect");
                 navigate('/login');
             }
             else if (res.data.msg == 'Incorrect password') {
-                // console.log(res.data.msg);
                 toast.error("Either your email or password is incorrect");
                 navigate('/login');
             }
             else {
-                // console.log(res.data);
                 localStorage.setItem('user' , JSON.stringify(res.data));
                 userHandler(res.data);
                 toast.success("Logged in successfully" , {

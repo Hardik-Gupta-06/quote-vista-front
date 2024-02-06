@@ -4,6 +4,7 @@ import Quote from '../Quote/Quote';
 import { useNavigate } from 'react-router-dom';
 import styles from './MyQuotes.module.css';
 import Loader from '../spinner/Loader';
+import { URL } from '../url';
 
 const MyQuotes = () => {
 
@@ -13,8 +14,7 @@ const MyQuotes = () => {
   let navigate = useNavigate();
 
   async function getQuotes() {
-      let res = await axios.get('http://localhost:8080/myquotes' , {withCredentials: true});
-      // console.log(res);
+      let res = await axios.get(`${URL}/myquotes` , {withCredentials: true});
       if (res.data.msg && res.data.msg == 'Please Login First') {
         navigate('/login');
         return;
@@ -43,7 +43,6 @@ const MyQuotes = () => {
               quotes.map((quote , index)=> {
                 return <Quote 
                     key={index}
-                    // key={quote._id}
                     author={quote.author}
                     text={quote.text}
                     id={quote._id}

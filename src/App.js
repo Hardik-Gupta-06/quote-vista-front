@@ -11,8 +11,9 @@ import './App.css';
 import axios from 'axios'
 import MyQuotes from './Components/pages/MyQuotes'
 import AllQuotes from './Components/pages/AllQuotes'
-import { Slide, ToastContainer } from 'react-toastify'
+import { ToastContainer } from 'react-toastify'
 import Logout from './Components/authentication/Logout'
+import { URL } from './Components/url'
 
 const App = () => {
 
@@ -33,7 +34,7 @@ const App = () => {
 
     const autoLogin = async () => {
       try {
-        let updatedUser = await axios.post("http://localhost:8080/autoLogin", {email: user.email}, {withCredentials: true});
+        let updatedUser = await axios.post(`${URL}/autoLogin`, {email: user.email}, {withCredentials: true});
         localStorage.setItem('user' , JSON.stringify(updatedUser.data));
 
       } catch (error) {
@@ -60,9 +61,8 @@ const App = () => {
   return (
     <>
         <ToastContainer theme='dark' position='top-center' />
-        <MainNavigation user={user ? user : {username: 'Anonymous'}} userHandler={userHandler} />
-        <Sidebar userHandler={userHandler} />
-        {/* <div className='container'> */}
+        <MainNavigation user={user ? user : {username: 'Anonymous'}} />
+        <Sidebar />
 
         <main>
           <Routes >
@@ -76,8 +76,6 @@ const App = () => {
             <Route path='/logout' element={ <Logout userHandler = {userHandler} /> } />
           </Routes>
         </main>
-
-        {/* </div> */}
     </>
   )
 }

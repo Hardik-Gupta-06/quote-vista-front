@@ -4,13 +4,13 @@ import { useNavigate } from 'react-router-dom'
 import axios from 'axios';
 import { FaRegEdit } from "react-icons/fa";
 import { FaTrashAlt } from "react-icons/fa";
-// import { ImEye } from "react-icons/im";
 import withReactContent from 'sweetalert2-react-content';
 import Swal from 'sweetalert2';
 import { Slide, toast } from 'react-toastify';
 import LikeQuote from '../likes/LikeQuote';
 import { BiDetail } from "react-icons/bi";
 import ShareQuote from '../share/ShareQuote';
+import { URL } from '../url';
 
 const MySwal = withReactContent(Swal);
 
@@ -37,8 +37,7 @@ const Quote = ({getQuotes , text , author , id , likes , userOnly}) => {
       confirmButtonText: "Yes, delete it!"
     }).then(async (result) => {
       if (result.isConfirmed) {
-        let res = await axios.delete(`http://localhost:8080/quotes/${id}` , {withCredentials: true});
-        // console.log(res);
+        let res = await axios.delete(`${URL}/quotes/${id}` , {withCredentials: true});
         if (res.data.msg && res.data.msg == 'Please Login First') {
           navigate('/login');
           return;

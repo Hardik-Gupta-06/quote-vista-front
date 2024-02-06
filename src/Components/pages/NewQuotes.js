@@ -1,8 +1,9 @@
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import styles from "./NewQuotes.module.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { Slide, toast } from "react-toastify";
+import { URL } from "../url";
 
 const NewQuotes = () => {
   let nameRef = useRef();
@@ -14,7 +15,7 @@ const NewQuotes = () => {
     const author = nameRef.current.value;
     const text = quoteRef.current.value;
     try {
-      let res = await axios.post("http://localhost:8080/addquotes", {
+      let res = await axios.post(`${URL}/addquotes`, {
         author,
         text,
       } , {withCredentials: true});
@@ -31,12 +32,6 @@ const NewQuotes = () => {
       console.log("cannot create new quote");
     }
   }
-
-  // useEffect(()=> {
-  //   if (!user.email) {
-  //     navigate('/login');
-  //   }
-  // } , [])
 
   return (
     <div>

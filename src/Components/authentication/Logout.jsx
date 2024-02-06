@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { Slide, toast } from 'react-toastify';
 import Swal from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content';
+import { URL } from '../url';
 
 const MySwal = withReactContent(Swal);
 
@@ -23,7 +24,7 @@ const Logout = ({userHandler}) => {
       denyButtonText: "Cancel",
     }).then(async (result) => {
       if (result.isConfirmed) {
-        await axios.get('http://localhost:8080/logout' , {withCredentials: true});
+        await axios.get(`${URL}/logout` , {withCredentials: true});
         toast.success("Logged out successfully" , {
           transition: Slide
         });
@@ -35,7 +36,6 @@ const Logout = ({userHandler}) => {
         navigate('/');
       }
     })
-    // userHandler({});
   }
 
   useEffect(()=> {

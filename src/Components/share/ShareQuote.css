@@ -21,7 +21,6 @@
 
 .share section {
     text-align: center;
-    /* margin-top: 30px; */
 }
 
 .share section input {
@@ -34,7 +33,6 @@
 }
 
 .share section span {
-    /* display: none; */
     position: relative;
     right: 30px;
     cursor: pointer;

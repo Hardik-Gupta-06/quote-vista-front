@@ -34,9 +34,7 @@ const ShareQuote = ({id}) => {
             transform: 'translate(-50%, -50%)',
             borderRadius: '10px',
             backgroundColor: '#1a1625',
-            // backgroundColor: 'black',
             padding: '15px',
-            // border: '1px solid #ccc',
             border: '1px solid #a688fa',
             animation: 'fadeIn 0.5s ease'
         },

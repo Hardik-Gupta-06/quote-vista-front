@@ -4,6 +4,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import styles from './ShowQuotes.module.css';
 import LikeQuote from '../likes/LikeQuote';
 import Loader from '../spinner/Loader';
+import { URL } from '../url';
 
 const ShowQuotes = () => {
 
@@ -14,12 +15,11 @@ const ShowQuotes = () => {
     let [isLoading , setIsLoading] = useState(true);
 
     async function fetchQuote() {
-        let res = await axios.get(`http://localhost:8080/quotes/${params.id}` , {withCredentials: true});
+        let res = await axios.get(`${URL}/quotes/${params.id}` , {withCredentials: true});
         if (res.data.msg && res.data.msg == 'Please Login First') {
             navigate('/login');
             return;
         }
-        // let {author , text} = res.data;
         setQuote(res.data);
         setIsLoading(false);
     }

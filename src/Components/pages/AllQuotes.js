@@ -3,6 +3,7 @@ import axios from 'axios';
 import Quote from '../Quote/Quote';
 import styles from './AllQuotes.module.css';
 import Loader from '../spinner/Loader';
+import { URL } from '../url';
 
 const AllQuotes = () => {
 
@@ -10,12 +11,7 @@ const AllQuotes = () => {
   let [isLoading , setIsLoading] = useState(true);
 
   async function getQuotes() {
-      let res = await axios.get('http://localhost:8080/allquotes' , {withCredentials: true});
-      // console.log(res);
-    //   if (res.data.msg && res.data.msg == 'Please Login First') {
-    //     navigate('/login');
-    //     return;
-    //   }
+      let res = await axios.get(`${URL}/allquotes` , {withCredentials: true});
       setQuotes(res.data);
       setIsLoading(false);
   }
@@ -40,7 +36,6 @@ const AllQuotes = () => {
                 quotes.map((quote , index)=> {
                   return <Quote 
                       key={index}
-                      // key={quote._id}
                       author={quote.author}
                       text={quote.text}
                       id={quote._id}
