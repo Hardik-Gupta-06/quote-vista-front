@@ -29,7 +29,7 @@ const AllQuotes = () => {
       <div className={styles["all-quotes"]}>
           <h1> All Quotes </h1>
           {isLoading ?
-              <Loader />
+            <Loader />
           :
             <section>
               {

@@ -14,8 +14,12 @@ const Sidebar = () => {
   let [isClicked , setIsClicked] = useState(false);
   let [menuUsed , setMenuUsed] = useState(false);
 
-  useEffect(()=> {
+  function handleSize() {
     setWidth(window.innerWidth);
+  }
+
+  useEffect(()=> {
+    window.addEventListener('resize' , handleSize);
   } , []);
 
   let animation = (width <= 640 && !isClicked) ? 'animate__fadeOutLeft' : 'animate__fadeInLeft';
@@ -38,7 +42,7 @@ const Sidebar = () => {
       {(width > 640 || menuUsed) &&
         <div className={`sidebar animate__animated ${animation}`}>
             <br />
-            Side Panel
+            Explore
             <br />
             <br />
             <hr />
@@ -57,7 +61,7 @@ const Sidebar = () => {
                 <Link to='/myquotes' onClick={() => { setIsClicked(false) }}> My Quotes </Link>
             </div>
 
-            {width <= 640 &&
+            {(width <= 640 && !localStorage.getItem('user')) &&
               <div>
                 <span> <MdOutlineSettings /> </span>
                 <Link to='/signup' onClick={() => { setIsClicked(false) }}> Sign up </Link>

@@ -41,12 +41,21 @@ const LikeQuote = ({likes , id , getQuotes}) => {
         getQuotes();
     }
 
+    function handleClick() {
+        if (isLiked) {
+            unlikeHandler(id);
+        }
+        else {
+            likeHandler(id);
+        }
+    }
+
     return (
-        <button>
+        <button onClick={handleClick}>
             {isLiked ?
-                <span onClick={()=> {unlikeHandler(id)}} style={{color: 'red'}}> <IoIosHeart style={{position: 'relative' , bottom: '1.5px'}} /> </span>
+                <span style={{color: 'red'}}> <IoIosHeart style={{position: 'relative' , bottom: '1.5px'}} /> </span>
             :
-                <span onClick={()=> {likeHandler(id)}} style={{color: 'red'}}> <IoIosHeartEmpty style={{position: 'relative' , bottom: '1.5px'}} /> </span>
+                <span style={{color: 'red'}}> <IoIosHeartEmpty style={{position: 'relative' , bottom: '1.5px'}} /> </span>
 
             }
             {likes.length}

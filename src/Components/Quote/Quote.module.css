@@ -26,7 +26,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     font-family: cursive;
-    font-size: 15px;
+    font-size: 16px;
 }
 
 .quote button {
@@ -86,7 +86,7 @@
         margin-top: 5px;
     }
     .quote p {
-        font-size: 13px;
+        font-size: 14px;
     }
     .quote button {
         font-size: smaller;
@@ -107,7 +107,7 @@
         margin-top: 5px;
     }
     .quote p {
-        font-size: 12px;
+        font-size: 13px;
     }
     .quote button {
         font-size: 12px;
@@ -129,7 +129,7 @@
         margin-top: 5px;
     }
     .quote p {
-        font-size: 12px;
+        font-size: 13px;
     }
     .quote button {
         font-size: 12px;

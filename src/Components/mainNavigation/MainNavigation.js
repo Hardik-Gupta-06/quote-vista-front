@@ -16,10 +16,12 @@ const MainNavigation = ({user}) => {
               <span style={{color: "#a688fa"}}> <FaRegCircleUser style={{position: 'relative' , bottom: '1.5px'}} /> </span>
               <span> {user.username} </span>
             </li>
-            <li className={styles.account}>
-              <span style={{color: "#a688fa"}}> <MdOutlineSettings style={{position: 'relative' , bottom: '1.5px'}} /> </span>
-              <span> <Link to='/signup'> Sign up </Link> </span>
-            </li>
+            {!localStorage.getItem('user') && 
+                <li className={styles.account}>
+                  <span style={{color: "#a688fa"}}> <MdOutlineSettings style={{position: 'relative' , bottom: '1.5px'}} /> </span>
+                  <span> <Link to='/signup'> Sign up </Link> </span>
+                </li>
+            }
             {!localStorage.getItem('user') ?
                 <li className={styles.account}>
                   <span style={{color: "#a688fa"}}> <GrLogin style={{position: 'relative' , bottom: '1.5px'}} /> </span>
