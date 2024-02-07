@@ -19,7 +19,8 @@
     },
     {
       "src": "QuoteVistaIcon.png",
-      "type": "image/png"
+      "type": "image/png",
+      "sizes": "192x192"
     }
   ],
   "start_url": ".",
