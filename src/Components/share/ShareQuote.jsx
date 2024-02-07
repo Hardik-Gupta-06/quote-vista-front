@@ -43,8 +43,8 @@ const ShareQuote = ({id}) => {
             backgroundColor: 'rgba(0, 0, 0, 0.5)',
         }
     }
-    
-    const shareUrl = `${window.location.origin}/quote/${id}`;
+
+    const shareUrl = `${window.location.origin}/quotes/${id}`;
 
     async function handleCopy() {
         try {
