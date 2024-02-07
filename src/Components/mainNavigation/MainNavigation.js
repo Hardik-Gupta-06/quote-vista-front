@@ -11,6 +11,7 @@ const MainNavigation = ({user}) => {
   return (
     <nav className={styles.nav}>
         <h2> QuoteVista </h2>
+        
         <ul>
             <li>
               <span style={{color: "#a688fa"}}> <FaRegCircleUser style={{position: 'relative' , bottom: '1.5px'}} /> </span>
